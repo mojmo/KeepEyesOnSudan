@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  --primary-color: #003049;
+  --secondary-color: #669BBC;
+  --background-start: #f5f5f5;
+  --background-end: #ffffff;
+  --gray-dark: #9D9D9D;
+  --gray-light: #EEEEEE;
+  --black: #1E1E1E;
+  --accent-color: #C1121F;
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: var(--black);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background-start);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--gray-dark);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.gredient-bg {
+  background: linear-gradient(to bottom, var(--background-start), var(--background-end));
+}
+
+.gredient-bg-reverse {
+  background: linear-gradient(to bottom, var(--background-end), var(--background-start));
+}
