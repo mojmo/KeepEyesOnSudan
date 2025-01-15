@@ -70,3 +70,23 @@ ul {
 .gredient-bg-reverse {
   background: linear-gradient(to bottom, var(--background-end), var(--background-start));
 }
+
+.blurred__shape {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--secondary-color);
+  filter: blur(50px);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.blurred__shape-left {
+  top: 80%;
+  left: -50px;
+}
+
+.blurred__shape-right {
+  top: 18%;
+  right: -50px;
+}

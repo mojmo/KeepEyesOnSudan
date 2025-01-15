@@ -1,0 +1,11 @@
+.hero {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 769px) {
+    .hero {
+        height: 83vh;
+    }
+}
