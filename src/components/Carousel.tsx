@@ -4,10 +4,12 @@ import carousel_2 from '@assets/carousel_2.jpg'
 import carousel_3 from '@assets/carousel_3.jpg'
 import '@styles/carousel.css'
 
-const images = [
-    carousel_1,
-    carousel_2,
-    carousel_3,
+const images = [carousel_1, carousel_2, carousel_3,];
+
+const imageTexts = [
+    'Children bear the brunt of the war—over 13 million require urgent protection and aid to survive.',
+    'Over 4.5 million people displaced since the conflict began, seeking safety within and beyond Sudan\'s borders.',
+    'Daily death tolls continue to rise, with thousands of innocent lives lost to violence and unrest.',
 ];
 
 const Carousel = () => {
@@ -39,12 +41,17 @@ const Carousel = () => {
                         className += ' next';
                         }
                         return (
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`carousel-image-${index}`}
-                            className={className}
-                        />
+                            <div key={index} className={`carousel__slide ${currentSlide === index ? 'active' : ''}`}>
+                                <img
+                                    key={index}
+                                    src={image}
+                                    alt={`carousel-image-${index}`}
+                                    className={className}
+                                />
+                                <div className="carousel__overlay">
+                                    <h2 className="carousel__text">{imageTexts[index]}</h2>
+                                </div>
+                            </div>
                         );
                     })}
                 </div>
