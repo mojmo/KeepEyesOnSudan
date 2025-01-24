@@ -5,15 +5,32 @@ import "@styles/latestNews.css";
 
 const LatestNews = () => {
     const [news, setNews] = useState<any[]>([]);
-    // const [scrollPosition, setScrollPosition] = useState(0);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
+
+        let isMounted = true; // Flag to track if the component is mounted
         const loadNews = async () => {
-            const articles = await fetchNews(5);
-            console.log(articles);
-            setNews(articles);
+            if (isLoading) return;
+            setIsLoading(true);
+            try {
+                const articles = await fetchNews(5); // Fetch 5 articles for the home page
+                if (isMounted) {
+                    setNews(articles);
+                }
+            } catch (error) {
+                console.error('Error loading news:', error);
+            } finally {
+                if (isMounted) {
+                    setIsLoading(false);
+                }
+            }
         };
         loadNews();
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     const scrollLeft = () => {
