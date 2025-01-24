@@ -1,0 +1,110 @@
+.latest-news {
+    position: relative;
+    padding: 2rem 0;
+    background: linear-gradient(to bottom, var(--background-end), var(--background-start));
+}
+
+.latest-news__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.latest-news__header h2 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.see-all-button {
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.see-all-button:hover {
+    color: var(--accent-color);
+    opacity: 0.8;
+}
+
+.latest-news__container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
+
+.latest-news__card {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.latest-news__card:hover {
+    transform: translateY(-5px);
+}
+
+.latest-news__image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.latest-news__title {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+}
+
+.latest-news__description {
+    font-size: 0.9rem;
+    color: var(--gray-dark);
+    padding: 0 1rem 1rem;
+}
+
+.latest-news__arrows {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.latest-news__arrow {
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 25%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.latest-news__arrow:hover {
+    background-color: var(--primary-color);
+    color: var(--background-end);
+}
+
+.latest-news__arrow.left {
+    left: 1rem;
+}
+
+.latest-news__arrow.right {
+    right: 1rem;
+}
+
+  /* Hide scrollbar */
+.latest-news__container::-webkit-scrollbar {
+    display: none;
+}
