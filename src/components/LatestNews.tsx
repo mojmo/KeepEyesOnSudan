@@ -64,6 +64,10 @@ const LatestNews = () => {
                                 alt={article.title}
                                 className="latest-news__image"
                             />
+                            <div className="latest-news__source">
+                                <span className="source-name">{article.source.name}</span>
+                                <span className="source-date">{article.publishedAt.split("T")[0]}</span>
+                            </div>
                             <h3 className="latest-news__title">{article.title}</h3>
                             <p className="latest-news__description">{article.description}</p>
                         </div>

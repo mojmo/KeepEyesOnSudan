@@ -3,7 +3,7 @@ import axios from "axios";
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const BASE_URL = "https://newsapi.org/v2/everything";
 const CACHE_KEY = "cached_news";
-const CACHE_EXPIRY = 60 * 60 * 24 * 7; // 1 week
+const CACHE_EXPIRY = 3000; // in milliseconds
 
 export const fetchNews = async (pageSize: number = 5) => {
     const cachedData = localStorage.getItem(CACHE_KEY);
