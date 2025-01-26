@@ -13,7 +13,7 @@
 
 .latest-news__header h2 {
     margin-bottom: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--primary-color);
 }
 
@@ -107,4 +107,32 @@
   /* Hide scrollbar */
 .latest-news__container::-webkit-scrollbar {
     display: none;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .latest-news__header h2 {
+        font-size: 1.5rem;
+    }
+
+    .latest-news__card {
+        flex: 0 0 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .latest-news__card {
+        flex: 0 0 95%;
+    }
+
+    .latest-news__title {
+        font-size: 1rem;
+    }
+
+    .latest-news__description {
+        font-size: 0.8rem;
+    }
 }
