@@ -32,3 +32,9 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
 }
+
+@media only screen and (max-width: 768px) {
+    .social-media__card {
+        width: 100%;
+    }
+}
