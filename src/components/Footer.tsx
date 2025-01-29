@@ -10,10 +10,22 @@ const Footer = () => {
                 <div className="footer__content">
                     <div className="footer__links">
                         <p>Follow these accounts for the latest updates on Sudan and urgent assistance needed.</p>
-                        <a href="https://x.com/sudan_war" target="_blank">Sudan War Updates</a>
-                        <a href="https://x.com/AlMigdadHassan0" target="_blank">Almigdad Hassan</a>
-                        <a href="https://x.com/BSonblast" target="_blank">Munchkin</a>
-                        <a href="https://x.com/KhartoumKitchen" target="_blank">Khartoum Aid Kitchen</a>
+                        <a className="tooltip" href="https://x.com/sudan_war" target="_blank">
+                            Sudan War Updates
+                            <span className="tooltiptext">A free platform run by independent youth specializing in reporting on daily events and summarizing the situation in Sudan.</span>
+                        </a>
+                        <a className="tooltip" href="https://x.com/AlMigdadHassan0" target="_blank">
+                            Almigdad Hassan
+                            <span className="tooltiptext">Correspondent @AlArabiya @AlHadath Channels-Sudan.</span>
+                        </a>
+                        <a className="tooltip" href="https://x.com/BSonblast" target="_blank">
+                            Munchkin
+                            <span className="tooltiptext">Content Creator</span>
+                        </a>
+                        <a className="tooltip" href="https://x.com/KhartoumKitchen" target="_blank">
+                            Khartoum Aid Kitchen
+                            <span className="tooltiptext">non-profit initiative helping to feed families in need in Sudan</span>
+                        </a>
                     </div>
                     <div className="footer__copyright">
                         © 2025 KeepEyesOnSudan. All rights reserved.
