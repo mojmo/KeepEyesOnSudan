@@ -4,12 +4,14 @@ import Summary from '@components/Summary';
 import LatestNews from '@components/LatestNews';
 import SocialMedia from '@components/SocialMedia';
 import Footer from '@components/Footer';
+import Statistics from '@components/Statistics'
 const Home = () => {
     return (
         <>
             <Navbar />
             <Hero />
             <Summary />
+            <Statistics />
             <LatestNews />
             <SocialMedia />
             <Footer />

@@ -1,0 +1,51 @@
+[
+    {
+        "Country": "CAR",
+        "Girls": "32.00%",
+        "Boys": "29.00%",
+        "Women": "25.00%",
+        "Men": "14.00%"
+    },
+    {
+        "Country": "Chad*",
+        "Girls": "31.00%",
+        "Boys": "30.00%",
+        "Women": "25.00%",
+        "Men": "13.00%"
+    },
+    {
+        "Country": "Egypt*",
+        "Girls": "20.00%",
+        "Boys": "21.00%",
+        "Women": "33.00%",
+        "Men": "25.00%"
+    },
+    {
+        "Country": "Ethiopia",
+        "Girls": "23.00%",
+        "Boys": "27.00%",
+        "Women": "13.00%",
+        "Men": "37.00%"
+    },
+    {
+        "Country": "Libya",
+        "Girls": "17.00%",
+        "Boys": "20.00%",
+        "Women": "19.00%",
+        "Men": "42.00%"
+    },
+    {
+        "Country": "South Sudan",
+        "Girls": "30.00%",
+        "Boys": "30.00%",
+        "Women": "20.00%",
+        "Men": "20.00%"
+    },
+    {
+        "Country": "Uganda",
+        "Girls": "19.00%",
+        "Boys": "23.00%",
+        "Women": "27.00%",
+        "Men": "28.00%"
+    }
+]

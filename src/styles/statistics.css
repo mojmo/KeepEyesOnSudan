@@ -1,0 +1,11 @@
+.statistics {
+    position: relative;
+    padding: 2rem 0;
+    background-color: var(--background-end);
+}
+
+.statistics__container h2 {
+    margin-bottom: 0;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
