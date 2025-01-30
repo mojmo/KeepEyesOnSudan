@@ -1,7 +1,7 @@
 import '@styles/navbar.css'
-import logo from '@assets/logo.svg'
-import humburger from '@assets/humburger.svg'
-import cross from '@assets/cross.svg'
+import logo from '@assets/dark_logo.svg'
+import humburger from '@assets/dark_humburger.svg'
+import cross from '@assets/dark_cross.svg'
 import { useState } from 'react'
 
 const Navbar = () => {

@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    color: var(--primary-color);
 }
 
 
@@ -32,12 +33,12 @@
 }
 
 .navbar__links a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     transition: all 0.3s ease-in-out;
 }
 
 .navbar__links a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .navbar__toggle {
