@@ -5,7 +5,17 @@
 }
 
 .statistics__container h2 {
-    margin-bottom: 0;
+    margin-bottom: 20px;
     font-size: 2rem;
     color: var(--primary-color);
+}
+
+.statistics__container p.source {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    .statistics__container p.source {
+        margin-top: 200px;
+    }
 }

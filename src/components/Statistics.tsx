@@ -9,6 +9,7 @@ const Statistics = () => {
             <div className="statistics__container container">
                 <h2>Statistics</h2>
                 <StatisticsChart />
+                <p className='source'>Source: <a href="https://data.unhcr.org/en/situations/sudansituation">UNHCR Refugee Data</a></p>
             </div>
         </section>
     );
