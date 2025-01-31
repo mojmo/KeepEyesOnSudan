@@ -31,13 +31,12 @@ const SocialMedia = () => {
     console.log(posts);
 
     return (
-        <section className="social-media">
+        <section className="social-media" id="social-media">
             <div className="blurred__shape blurred__shape-left"></div>
             <div className="blurred__shape blurred__shape-right"></div>
             <div className="social-media__content container">
                 <div className="social-media__header">
                     <h2>Social Media</h2>
-                    <a href="/news" className="see-all-button">See All</a>
                 </div>
                 <div className="social-media__container">
                     {posts.length > 0 ? (

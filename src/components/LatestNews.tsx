@@ -48,13 +48,12 @@ const LatestNews = () => {
     }
 
     return (
-        <section className="latest-news">
+        <section className="latest-news" id="latest-news">
             <div className="blurred__shape blurred__shape-left"></div>
             <div className="blurred__shape blurred__shape-right"></div>
             <div className="latest-news__content container">
                 <div className="latest-news__header">
                     <h2>Latest News</h2>
-                    <a href="/news" className="see-all-button">See All</a>
                 </div>
                 <div className="latest-news__container">
                     {news.map((article: any, index: number) => (

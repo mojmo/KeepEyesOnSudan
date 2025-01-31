@@ -24,10 +24,10 @@ const Navbar = () => {
                     </div>
 
                     <ul className={`navbar__links ${isOpen ? 'active' : ''}`}>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/statistics">Statistics</a></li>
-                        <li><a href="/news">News</a></li>
-                        <li><a href="/social">Social</a></li>
+                        <li><a href="#summary">What's happening in Sudan?</a></li>
+                        <li><a href="#statistics">Statistics</a></li>
+                        <li><a href="#latest-news">Latest News</a></li>
+                        <li><a href="#social-media">Social Media</a></li>
                     </ul>
                 </div>
             </nav>
