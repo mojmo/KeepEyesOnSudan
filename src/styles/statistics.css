@@ -14,8 +14,21 @@
     margin-top: 100px;
 }
 
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
 @media screen and (max-width: 768px) {
     .statistics__container p.source {
         margin-top: 200px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .statistics__container p.source {
+        margin-top: 240px;
     }
 }
