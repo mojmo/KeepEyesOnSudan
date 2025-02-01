@@ -84,6 +84,7 @@ const LatestNews = () => {
                                     </div>
                                     <h3 className="latest-news__title">{article.title}</h3>
                                     <p className="latest-news__description">{article.description}</p>
+                                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="latest-news__card-link">Read More</a>
                                 </div>
                             ))}
                         </div>

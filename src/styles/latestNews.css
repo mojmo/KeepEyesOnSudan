@@ -74,6 +74,11 @@
     padding: 0 1rem 1rem;
 }
 
+.latest-news__card-link {
+    display: inline-block;
+    margin: 1rem;
+}
+
 .latest-news__arrows {
     margin-top: 2rem;
     display: flex;
