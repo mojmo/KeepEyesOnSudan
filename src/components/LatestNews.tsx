@@ -48,10 +48,10 @@ const LatestNews = () => {
     }
 
     return (
-        <section className="latest-news" id="latest-news">
+        <section className="latest-news">
             <div className="blurred__shape blurred__shape-left"></div>
             <div className="blurred__shape blurred__shape-right"></div>
-            <div className="latest-news__content container">
+            <div className="latest-news__content container" id="latest-news">
                 <div className="latest-news__header">
                     <h2>Latest News</h2>
                 </div>

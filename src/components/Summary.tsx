@@ -6,10 +6,10 @@ import peace from '@assets/peace.svg'
 
 const Summary = () => {
     return (
-        <div className="summary" id="summary">
+        <div className="summary" >
             <div className="blurred__shape blurred__shape-left"></div>
             <div className="blurred__shape blurred__shape-right"></div>
-            <div className="summary__container container">
+            <div className="summary__container container" id="summary">
                 <div className="summary__text">
                     <h2>What's happening in Sudan?</h2>
                 </div>

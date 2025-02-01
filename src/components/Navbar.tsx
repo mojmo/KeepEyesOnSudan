@@ -24,10 +24,10 @@ const Navbar = () => {
                     </div>
 
                     <ul className={`navbar__links ${isOpen ? 'active' : ''}`}>
-                        <li><a href="#summary">What's happening in Sudan?</a></li>
-                        <li><a href="#statistics">Statistics</a></li>
-                        <li><a href="#latest-news">Latest News</a></li>
-                        <li><a href="#social-media">Social Media</a></li>
+                        <li><a href="#summary" onClick={() => setIsOpen(false)}>What's happening in Sudan?</a></li>
+                        <li><a href="#statistics" onClick={() => setIsOpen(false)}>Statistics</a></li>
+                        <li><a href="#latest-news" onClick={() => setIsOpen(false)}>Latest News</a></li>
+                        <li><a href="#social-media" onClick={() => setIsOpen(false)}>Social Media</a></li>
                     </ul>
                 </div>
             </nav>

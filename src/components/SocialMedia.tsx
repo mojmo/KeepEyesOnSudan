@@ -31,10 +31,10 @@ const SocialMedia = () => {
     console.log(posts);
 
     return (
-        <section className="social-media" id="social-media">
+        <section className="social-media">
             <div className="blurred__shape blurred__shape-left"></div>
             <div className="blurred__shape blurred__shape-right"></div>
-            <div className="social-media__content container">
+            <div className="social-media__content container" id="social-media">
                 <div className="social-media__header">
                     <h2>Social Media</h2>
                 </div>
