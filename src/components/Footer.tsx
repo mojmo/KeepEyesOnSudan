@@ -1,4 +1,7 @@
-import '@styles/footer.css'
+import '@styles/footer.css';
+import x from '@assets/x.svg';
+import github from '@assets/github.svg';
+import linkedin from '@assets/linkedin.svg';
 
 const Footer = () => {
     return (
@@ -28,7 +31,12 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="footer__copyright">
-                        © 2025 KeepEyesOnSudan. All rights reserved.
+                        <p>Designed and developed by <a href="https://github.com/mojmo" target="_blank"><strong>Mugtaba Mohamed</strong></a></p>
+                        <div className="footer__icons">
+                            <a href="https://github.com/mojmo" target="_blank"><img src={github} alt="github" /></a>
+                            <a href="https://www.linkedin.com/in/mojtaba-mohamed" target="_blank"><img src={linkedin} alt="linkedin" /></a>
+                            <a href="https://twitter.com/MOJMO_" target="_blank"><img src={x} alt="x" /></a>
+                        </div>
                     </div>
                 </div>
             </div>

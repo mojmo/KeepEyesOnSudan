@@ -40,6 +40,11 @@
     width: 80%;
 }
 
+.footer__icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .tooltip {
     position: relative;
     display: inline-block;
@@ -97,5 +102,10 @@
 
     .footer__copyright {
         margin-top: 3rem;
+    }
+
+    .footer__icons img {
+        width: 80%;
+        height: 80%;
     }
 }
