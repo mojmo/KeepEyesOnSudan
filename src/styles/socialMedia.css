@@ -33,6 +33,13 @@
     z-index: 1;
 }
 
+.social-media__skeleton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
 @media only screen and (max-width: 768px) {
     .social-media__card {
         width: 100%;

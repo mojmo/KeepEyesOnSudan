@@ -1,36 +1,35 @@
 import { useState, useEffect } from "react";
 import { fetchNews } from "@utils/newsApi";
+import SkeletonCard from "@components/SkeletonCard";
 import article_image from "assets/images (18).jpg";
 import "@styles/latestNews.css";
 
 const LatestNews = () => {
     const [news, setNews] = useState<any[]>([]);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-
-        let isMounted = true; // Flag to track if the component is mounted
         const loadNews = async () => {
-            if (isLoading) return;
-            setIsLoading(true);
-            try {
-                const articles = await fetchNews(5); // Fetch 5 articles for the home page
-                if (isMounted) {
-                    setNews(articles);
-                }
-            } catch (error) {
-                console.error('Error loading news:', error);
-            } finally {
-                if (isMounted) {
+            setTimeout(async () => {
+                try {
+                    const articles = await fetchNews(5);
+                    if (articles.length === 0) {
+                        setError("No news articles found");
+                        document.querySelector(".latest-news > .blurred__shape")?.remove();
+                    } else {
+                        setNews(articles);
+                    }
+                } catch (error) {
+                    console.error('Error loading news:', error);
+                    setError("Failed to fetch news. Please try again later.");
+                    document.querySelector(".latest-news > .blurred__shape")?.remove();
+                } finally {
                     setIsLoading(false);
                 }
-            }
+            }, 60000)
         };
         loadNews();
-
-        return () => {
-            isMounted = false;
-        };
     }, []);
 
     const scrollLeft = () => {
@@ -55,27 +54,47 @@ const LatestNews = () => {
                 <div className="latest-news__header">
                     <h2>Latest News</h2>
                 </div>
-                <div className="latest-news__container">
-                    {news.map((article: any, index: number) => (
-                        <div key={index} className="latest-news__card">
-                            <img
-                                src={article.urlToImage || article_image}
-                                alt={article.title}
-                                className="latest-news__image"
+                {isLoading ? (
+                    <div className="latest-news__skeleton latest-news__container">
+                        {[...Array(4)].map((_, index) => (
+                            <SkeletonCard
+                                key={index}
+                                imageHeight="150px"
+                                titleWidth="80%"
+                                descriptionLines={3}
+                                flex={window.innerWidth < 480 ? "0 0 95%" : "0 0 300px"}
                             />
-                            <div className="latest-news__source">
-                                <span className="source-name">{article.source.name}</span>
-                                <span className="source-date">{article.publishedAt.split("T")[0]}</span>
-                            </div>
-                            <h3 className="latest-news__title">{article.title}</h3>
-                            <p className="latest-news__description">{article.description}</p>
+                        ))}
+                    </div>
+                ) : error ?(
+                    <div className="latest-news__container">
+                        <p className="error">{error} &#128532;</p>
+                    </div>
+                ) : (
+                    <>
+                        <div className="latest-news__container">
+                            {news.map((article: any, index: number) => (
+                                <div key={index} className="latest-news__card">
+                                    <img
+                                        src={article.urlToImage || article_image}
+                                        alt={article.title}
+                                        className="latest-news__image"
+                                    />
+                                    <div className="latest-news__source">
+                                        <span className="source-name">{article.source.name}</span>
+                                        <span className="source-date">{article.publishedAt.split("T")[0]}</span>
+                                    </div>
+                                    <h3 className="latest-news__title">{article.title}</h3>
+                                    <p className="latest-news__description">{article.description}</p>
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                </div>
-                <div className="latest-news__arrows">
-                    <button className="latest-news__arrow left" onClick={scrollLeft}>&lt;</button>
-                    <button className="latest-news__arrow right" onClick={scrollRight}>&gt;</button>
-                </div>
+                        <div className="latest-news__arrows">
+                            <button className="latest-news__arrow left" onClick={scrollLeft}>&lt;</button>
+                            <button className="latest-news__arrow right" onClick={scrollRight}>&gt;</button>
+                        </div>
+                    </>
+                )}
             </div>
         </section>
     );

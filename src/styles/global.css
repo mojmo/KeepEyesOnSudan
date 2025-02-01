@@ -91,3 +91,13 @@ ul {
   top: 18%;
   right: -50px;
 }
+
+.error {
+  background-color: #669bbc73;
+  color: var(--primary-color);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+}

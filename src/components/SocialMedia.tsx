@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPosts } from "@utils/redditApi";
+import SkeletonCard from "@components/SkeletonCard";
 import reddit from "assets/reddit_icon.svg";
 import "@styles/socialMedia.css";
 
@@ -14,15 +15,28 @@ type Post = {
 const SocialMedia = () => {
 
     const [posts, setPosts] = useState<Post[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchPosts = async () => {
-            try {
-                const fetchedPosts = await getPosts();
-                setPosts(fetchedPosts);
-            } catch (error) {
-                console.error("Failed to fetch posts:", error);
-            }
+            setTimeout( async () => {
+                try {
+                    const fetchedPosts = await getPosts();
+                    if (fetchedPosts.length === 0) {
+                        setError("No posts found");
+                        document.querySelector(".social-media > .blurred__shape")?.remove();
+                    } else {
+                        setPosts(fetchedPosts);
+                    }
+                } catch (error) {
+                    console.error("Failed to fetch posts:", error);
+                    setError("Failed to fetch posts. Please try again later.");
+                    document.querySelector(".social-media > .blurred__shape")?.remove();
+                } finally {
+                    setIsLoading(false);
+                }
+            }, 10000);
         };
 
         fetchPosts();
@@ -38,9 +52,23 @@ const SocialMedia = () => {
                 <div className="social-media__header">
                     <h2>Social Media</h2>
                 </div>
-                <div className="social-media__container">
-                    {posts.length > 0 ? (
-                        posts.map((post, index) => (
+                {isLoading ? (
+                    <div className="social-media__skeleton">
+                        {[...Array(4)].map((_, index) => (
+                            <SkeletonCard
+                                key={index}
+                                imageHeight="100px"
+                                titleWidth="60%"
+                                descriptionLines={1}
+                                cardWidth={window.innerWidth < 768 ? "100%" : "calc(50% - 1rem)"}
+                            />
+                        ))}
+                    </div>
+                ) : error ? (
+                    <p className="error">{error} &#128532;</p>
+                ) : (
+                    <div className="social-media__container">
+                        {posts.map((post, index) => (
                             <div className="social-media__card" key={index}>
                                 <div className="social-media__card-logo">
                                     <img src={reddit} alt="Reddit" />
@@ -52,11 +80,9 @@ const SocialMedia = () => {
                                     <a href={post.url} target="_blank" rel="noopener noreferrer" className="social-media__card-post-link">Read More</a>
                                 </div>
                             </div>
-                        ))
-                    ) : (
-                        <p>Loading posts...</p>
-                    )}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     );

@@ -17,18 +17,6 @@
     color: var(--primary-color);
 }
 
-.see-all-button {
-    color: var(--accent-color);
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.see-all-button:hover {
-    color: var(--accent-color);
-    opacity: 0.8;
-}
-
 .latest-news__container {
     display: flex;
     overflow-x: auto;
@@ -124,6 +112,11 @@
   /* Hide scrollbar */
 .latest-news__container::-webkit-scrollbar {
     display: none;
+}
+
+.latest-news__skeleton {
+    display: flex;
+    
 }
 
 /* Responsive Styles */
