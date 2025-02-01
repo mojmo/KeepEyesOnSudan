@@ -67,7 +67,7 @@ const SocialMedia = () => {
                 ) : (
                     <div className="social-media__container">
                         {posts.map((post, index) => (
-                            <div className="social-media__card" key={index}>
+                            <div className="social-media__card" key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                                 <div className="social-media__card-logo">
                                     <img src={reddit} alt="Reddit" />
                                 </div>

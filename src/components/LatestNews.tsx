@@ -72,7 +72,7 @@ const LatestNews = () => {
                     <>
                         <div className="latest-news__container">
                             {news.map((article: any, index: number) => (
-                                <div key={index} className="latest-news__card">
+                                <div key={index} className="latest-news__card" data-aos="fade-up" data-aos-delay={index * 100}>
                                     <img
                                         src={article.urlToImage || article_image}
                                         alt={article.title}
