@@ -48,7 +48,6 @@ export const fetchNews = async (pageSize: number = 5) => {
         console.log('Fetched fresh news data');
         return filteredArticles;
     } catch (erorr) {
-        console.error(erorr);
         return [];
     }
 };

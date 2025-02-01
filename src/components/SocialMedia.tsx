@@ -29,7 +29,6 @@ const SocialMedia = () => {
                     setPosts(fetchedPosts);
                 }
             } catch (error) {
-                console.error("Failed to fetch posts:", error);
                 setError("Failed to fetch posts. Please try again later.");
                 document.querySelector(".social-media > .blurred__shape")?.remove();
             } finally {
@@ -39,8 +38,6 @@ const SocialMedia = () => {
 
         fetchPosts();
     }, []);
-
-    console.log(posts);
 
     return (
         <section className="social-media">
