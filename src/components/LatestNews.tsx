@@ -11,23 +11,21 @@ const LatestNews = () => {
 
     useEffect(() => {
         const loadNews = async () => {
-            setTimeout(async () => {
-                try {
-                    const articles = await fetchNews(5);
-                    if (articles.length === 0) {
-                        setError("No news articles found");
-                        document.querySelector(".latest-news > .blurred__shape")?.remove();
-                    } else {
-                        setNews(articles);
-                    }
-                } catch (error) {
-                    console.error('Error loading news:', error);
-                    setError("Failed to fetch news. Please try again later.");
+            try {
+                const articles = await fetchNews(5);
+                if (articles.length === 0) {
+                    setError("No news articles found");
                     document.querySelector(".latest-news > .blurred__shape")?.remove();
-                } finally {
-                    setIsLoading(false);
+                } else {
+                    setNews(articles);
                 }
-            }, 60000)
+            } catch (error) {
+                console.error('Error loading news:', error);
+                setError("Failed to fetch news. Please try again later.");
+                document.querySelector(".latest-news > .blurred__shape")?.remove();
+            } finally {
+                setIsLoading(false);
+            }
         };
         loadNews();
     }, []);

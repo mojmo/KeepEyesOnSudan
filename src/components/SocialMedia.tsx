@@ -20,23 +20,21 @@ const SocialMedia = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            setTimeout( async () => {
-                try {
-                    const fetchedPosts = await getPosts();
-                    if (fetchedPosts.length === 0) {
-                        setError("No posts found");
-                        document.querySelector(".social-media > .blurred__shape")?.remove();
-                    } else {
-                        setPosts(fetchedPosts);
-                    }
-                } catch (error) {
-                    console.error("Failed to fetch posts:", error);
-                    setError("Failed to fetch posts. Please try again later.");
+            try {
+                const fetchedPosts = await getPosts();
+                if (fetchedPosts.length === 0) {
+                    setError("No posts found");
                     document.querySelector(".social-media > .blurred__shape")?.remove();
-                } finally {
-                    setIsLoading(false);
+                } else {
+                    setPosts(fetchedPosts);
                 }
-            }, 10000);
+            } catch (error) {
+                console.error("Failed to fetch posts:", error);
+                setError("Failed to fetch posts. Please try again later.");
+                document.querySelector(".social-media > .blurred__shape")?.remove();
+            } finally {
+                setIsLoading(false);
+            }
         };
 
         fetchPosts();
