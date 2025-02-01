@@ -3,7 +3,7 @@ import axios from "axios";
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const BASE_URL = "https://newsapi.org/v2/everything";
 const CACHE_KEY = "cached_news";
-const CACHE_EXPIRY = 60 * 60 * 24 * 7;
+const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000;
 
 export const fetchNews = async (pageSize: number = 5) => {
     const cachedData = localStorage.getItem(CACHE_KEY);
@@ -19,24 +19,34 @@ export const fetchNews = async (pageSize: number = 5) => {
     try {
         const response = await axios.get(BASE_URL, {
             params: {
-                q: "Sudan War",
+                q: '"Sudan War" OR "Sudna crisis" OR "Sudan conflict" OR "SAF" OR "RSF" -"South Sudan"',
                 from: "2025-01-1",
                 sortBy: "publishedAt",
                 apiKey: API_KEY,
                 pageSize: pageSize,
+                language: "en",
             },
         });
 
         const articles = response.data.articles;
 
+        const filteredArticles = articles.filter((article: any) => {
+            const title = article.title.toLowerCase();
+            const description = article.description?.toLowerCase() || "";
+            return (
+                title.includes("sudan") ||
+                description.includes("sudan")
+            );
+        });
+
         const cachedData = {
-            data: articles,
+            data: filteredArticles,
             timestamp: now
         };
         localStorage.setItem(CACHE_KEY, JSON.stringify(cachedData));
 
         console.log('Fetched fresh news data');
-        return articles;
+        return filteredArticles;
     } catch (erorr) {
         console.error(erorr);
         return [];
