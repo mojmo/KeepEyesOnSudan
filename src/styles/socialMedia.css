@@ -41,6 +41,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .social-media__header h2 {
+        font-size: 1.5rem;
+    }
+
     .social-media__card {
         width: 100%;
     }
