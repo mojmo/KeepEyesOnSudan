@@ -44,7 +44,7 @@ app.get("/api/reddit", async (req, res) => {
                 Authorization: `Bearer ${token}`,
                 "User-Agent": "KeepEyesOnSudan",
             },
-            params: { q, sort: "relevance", limit: 10 },
+            params: { q, sort: "relevance", limit: 8 },
         });
 
         res.json(response.data);
