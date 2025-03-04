@@ -20,7 +20,7 @@ export const fetchNews = async (pageSize: number = 5) => {
         const response = await axios.get(BASE_URL, {
             params: {
                 q: '"Sudan War" OR "Sudna crisis" OR "Sudan conflict" OR "SAF" OR "RSF" -"South Sudan"',
-                from: "2025-01-1",
+                from: "2025-02-20",
                 sortBy: "publishedAt",
                 apiKey: API_KEY,
                 pageSize: pageSize,
