@@ -1,7 +1,7 @@
 import { useState , useEffect} from 'react'
-import carousel_1 from '@assets/carousel_1.jpg'
-import carousel_2 from '@assets/carousel_2.jpg'
-import carousel_3 from '@assets/carousel_3.jpg'
+import carousel_1 from '@assets/war_child.jpg' // image source: https://www.rescue.org/article/war-sudan-over-8-million-people-displaced
+import carousel_2 from '@assets/displacement.jpg' // image source: https://news.un.org/en/story/2023/11/1143317
+import carousel_3 from '@assets/destruction.jpg' // image source: https://arabcenterdc.org/resource/war-and-displacement-in-sudan/
 import '@styles/carousel.css'
 
 const images = [carousel_1, carousel_2, carousel_3,];
@@ -29,6 +29,9 @@ const Carousel = () => {
 
     return (
         <>
+            {/* Preload the first image */}
+            <link rel="preload" href={images[0]} as="image" />
+
             <div className="carousel container">
                 <div className="carousel__image-container">
                     {images.map((image, index) => {
