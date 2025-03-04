@@ -11,7 +11,7 @@
   --secondary-color: #669BBC;
   --background-start: #f5f5f5;
   --background-end: #ffffff;
-  --gray-dark: #9D9D9D;
+  --gray-dark: #737373;
   --gray-light: #EEEEEE;
   --black: #1E1E1E;
   --accent-color: #C1121F;
@@ -45,7 +45,7 @@ p {
 }
 
 a {
-  color: var(--secondary-color);
+  color: var(--accent-color);
   text-decoration: none;
 }
 
