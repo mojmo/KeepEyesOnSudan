@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_GNEWS_API_KEY;
-const BASE_URL = "https://gnews.io/api/v4/search?";
+const BASE_URL = "https://gnews.io/api/v4/search";
 const CACHE_KEY = "cached_news";
 const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000;
 
@@ -21,12 +21,12 @@ export const fetchNews = async (numberOfArticles: number = 5) => {
     try {
         const response = await axios.get(BASE_URL, {
             params: {
-                q: '"Sudan War" OR "Sudna crisis" OR "Sudan conflict" OR "SAF" OR "RSF" -"South Sudan"',
+                q: '"Sudan War" OR "Sudna crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"',
                 from: lastMonth.toISOString().split("T")[0],
                 sortBy: "publishedAt",
                 apikey: API_KEY,
                 max: numberOfArticles,
-                language: "en",
+                language: "en,fr,ar",
             },
         });
 
@@ -36,8 +36,8 @@ export const fetchNews = async (numberOfArticles: number = 5) => {
             const title = article.title.toLowerCase();
             const description = article.description?.toLowerCase() || "";
             return (
-                title.includes("sudan") ||
-                description.includes("sudan")
+                title.includes("sudan") || title.includes("SAF") ||
+                description.includes("sudan ") || description.includes("SAF")
             );
         });
 
