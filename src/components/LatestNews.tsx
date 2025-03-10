@@ -74,7 +74,7 @@ const LatestNews = () => {
                             {news.map((article: any, index: number) => (
                                 <div key={index} className="latest-news__card" data-aos="fade-up" data-aos-delay={index * 100}>
                                     <img
-                                        src={article.urlToImage || article_image}
+                                        src={article.image || article_image}
                                         alt={article.title}
                                         className="latest-news__image"
                                     />

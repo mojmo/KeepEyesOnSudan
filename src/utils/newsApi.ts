@@ -1,13 +1,15 @@
 import axios from "axios";
 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-const BASE_URL = "https://newsapi.org/v2/everything";
+const API_KEY = import.meta.env.VITE_GNEWS_API_KEY;
+const BASE_URL = "https://gnews.io/api/v4/search?";
 const CACHE_KEY = "cached_news";
 const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000;
 
-export const fetchNews = async (pageSize: number = 5) => {
+export const fetchNews = async (numberOfArticles: number = 5) => {
     const cachedData = localStorage.getItem(CACHE_KEY);
     const now = new Date().getTime();
+    const today = new Date();
+    let lastMonth = new Date(new Date().setDate(today.getDate() - 30)); 
 
     if (cachedData) {
         const { data, timestamp } = JSON.parse(cachedData);
@@ -20,10 +22,10 @@ export const fetchNews = async (pageSize: number = 5) => {
         const response = await axios.get(BASE_URL, {
             params: {
                 q: '"Sudan War" OR "Sudna crisis" OR "Sudan conflict" OR "SAF" OR "RSF" -"South Sudan"',
-                from: "2025-02-20",
+                from: lastMonth.toISOString().split("T")[0],
                 sortBy: "publishedAt",
-                apiKey: API_KEY,
-                pageSize: pageSize,
+                apikey: API_KEY,
+                max: numberOfArticles,
                 language: "en",
             },
         });
