@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchNews } from "@utils/newsApi";
 import SkeletonCard from "@components/SkeletonCard";
-import article_image from "assets/images (18).jpg";
+import article_image from "assets/KeepEyesOnSudan.png";
 import "@styles/latestNews.css";
 
 const LatestNews = () => {

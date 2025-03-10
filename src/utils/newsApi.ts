@@ -3,7 +3,7 @@ import axios from "axios";
 const API_KEY = import.meta.env.VITE_GNEWS_API_KEY;
 const BASE_URL = "https://gnews.io/api/v4/search";
 const CACHE_KEY = "cached_news";
-const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000;
+const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000; // 7 days
 
 export const fetchNews = async (numberOfArticles: number = 5) => {
     const cachedData = localStorage.getItem(CACHE_KEY);
