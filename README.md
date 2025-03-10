@@ -12,7 +12,7 @@ KeepEyesOnSudan is a React-based web application designed to raise awereness abo
 ## Tech Stack
 - **Frontend**: React, Vite
 - **Styling**: Pure CSS
-- **APIs**: NewsAPI, Reddit API
+- **APIs**: GNewsAPI, Reddit API
 - **Backend**: Node.js, Express.js (for Reddit API)
 
 ## How to Run Locally
@@ -31,7 +31,7 @@ KeepEyesOnSudan is a React-based web application designed to raise awereness abo
     ```
 4. Create a `.env` file in the root directory and add your NewsAPI and Reddit API keys:
     ```bash
-    VITE_NEWS_API_KEY=your_news_api_key
+    VITE_GNEWS_API_KEY=your_gnews_api_key
     VITE_REDDIT_CLIENT_ID=your_reddit_client_id
     VITE_REDDIT_CLIENT_SECRET=your_reddit_client_secret
     VITE_REDDIT_USERNAME=your_reddit_username
