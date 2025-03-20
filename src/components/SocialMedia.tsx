@@ -72,7 +72,7 @@ const SocialMedia = () => {
                                     <h3>{post.title}</h3>
                                     <p>{post.subreddit}</p>
                                     <p>{post.upvotes} upvotes, {post.comments} comments</p>
-                                    <a href={post.url} target="_blank" rel="noopener noreferrer" className="social-media__card-post-link">Read More</a>
+                                    <a href={post.url} target="_blank" rel="noopener noreferrer" className="social-media__card-post-link">Check post on Reddit</a>
                                 </div>
                             </div>
                         ))}
