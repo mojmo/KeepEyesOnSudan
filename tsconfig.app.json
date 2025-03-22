@@ -31,6 +31,7 @@
       "@assets/*": ["assets/*"],
       "@utils/*": ["utils/*"],
       "@data/*": ["data/*"],
+      "@types/*": ["types/*"],
     }
   },
   "include": ["src"]

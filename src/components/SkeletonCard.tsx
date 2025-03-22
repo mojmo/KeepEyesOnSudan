@@ -1,12 +1,5 @@
+import { SkeletonCardProps } from "@utils/types";
 import  "@styles/skeletonCard.css";
-
-interface SkeletonCardProps {
-    imageHeight?: string;
-    titleWidth?: string;
-    descriptionLines?: number;
-    cardWidth?: string;
-    flex?: string;
-}
 
 const SkeletonCard: React.FC<SkeletonCardProps> = ({
         imageHeight = '150px',

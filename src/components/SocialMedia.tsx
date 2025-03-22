@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import { getPosts } from "@utils/redditApi";
 import SkeletonCard from "@components/SkeletonCard";
+import { RedditPost } from "@utils/types";
 import reddit from "assets/reddit_icon.svg";
 import "@styles/socialMedia.css";
 
-type Post = {
-    title: string;
-    url: string;
-    subreddit: string;
-    upvotes: number;
-    comments: number;
-};
-
 const SocialMedia = () => {
 
-    const [posts, setPosts] = useState<Post[]>([]);
+    const [posts, setPosts] = useState<RedditPost[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 

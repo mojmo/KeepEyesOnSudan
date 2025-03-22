@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import Papa from "papaparse";
 import { LineChart, CartesianGrid, Line, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import data from "@data/genders.json";
+import { ChartData } from "@utils/types";
 
 const StatisticsChart = () => {
 
-    const [csvData, setCsvData] = useState([]);
+    const [csvData, setCsvData] = useState<ChartData[]>([]);
 
     const formattedData = data.map((entry) => ({
         Country: entry.Country,
