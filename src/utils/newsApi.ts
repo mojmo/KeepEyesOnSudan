@@ -1,11 +1,19 @@
 import axios from "axios";
+import { CachedData, NewsArticle } from "@utils/types";
 
 const API_KEY = import.meta.env.VITE_GNEWS_API_KEY;
 const BASE_URL = "https://gnews.io/api/v4/search";
 const CACHE_KEY = "cached_news";
 const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000; // 7 days
 
-export const fetchNews = async (numberOfArticles: number = 5) => {
+export class NewsAPIError extends Error {
+    constructor(message: string, public statusCode?: number) {
+        super(message);
+        this.name = 'NewsAPIError';
+    }
+}
+
+export const fetchNews = async (numberOfArticles: number = 5): Promise<NewsArticle[]> => {
     const cachedData = localStorage.getItem(CACHE_KEY);
     const now = new Date().getTime();
     const today = new Date();
@@ -32,7 +40,7 @@ export const fetchNews = async (numberOfArticles: number = 5) => {
 
         const articles = response.data.articles;
 
-        const filteredArticles = articles.filter((article: any) => {
+        const filteredArticles: NewsArticle[] = articles.filter((article: NewsArticle) => {
             const title = article.title.toLowerCase();
             const description = article.description?.toLowerCase() || "";
             return (
@@ -41,7 +49,7 @@ export const fetchNews = async (numberOfArticles: number = 5) => {
             );
         });
 
-        const cachedData = {
+        const cachedData: CachedData = {
             data: filteredArticles,
             timestamp: now
         };
@@ -49,7 +57,13 @@ export const fetchNews = async (numberOfArticles: number = 5) => {
 
         console.log('Fetched fresh news data');
         return filteredArticles;
-    } catch (erorr) {
-        return [];
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            throw new NewsAPIError(
+                error.response?.data?.message || 'Failed to fetch news',
+                error.response?.status
+            );
+        }
+        throw new NewsAPIError('An unexpected error occured');
     }
 };
