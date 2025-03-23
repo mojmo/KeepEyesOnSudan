@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
@@ -54,5 +55,4 @@ app.get("/api/reddit", async (req, res) => {
     }
 });
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
