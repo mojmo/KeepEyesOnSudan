@@ -34,6 +34,10 @@ const getAccessToken = async () => {
     return response.data.access_token;
 };
 
+app.get("/api/hello", (req, res) => {
+    res.send("Hello from KeepEyesOnSudan API");
+})
+
 // Proxy route for Reddit API
 app.get("/api/reddit", async (req, res) => {
     try {
