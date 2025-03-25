@@ -20,14 +20,16 @@ const StatisticsChart = () => {
     useEffect(() => {
         const fetchCSV = async () => {
             try {
-                const csvUrl = `${process.env.PUBLIC_URL}/data/refugees.csv`;
-                const response: any = await fetch(csvUrl);
+                const response: any = await fetch("/data/refugees.csv");
 
                 if (!response.ok) throw new Error ("Failed to fetch CSV");
 
                 const reader = response.body.getReader();
                 const result = await reader.read();
                 const text = new TextDecoder("utf-8").decode(result.value);
+
+                if (text.trim().startsWith("<!doctype html>") || text.includes("<html"))
+                    throw new Error ("CSV file not found");
 
                 if (!text.trim()) throw new Error ("Failed to fetch CSV");
 
