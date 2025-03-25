@@ -2,6 +2,7 @@
     position: relative;
     padding: 2rem 0;
     background-color: var(--background-end);
+    overflow: hidden;
 }
 
 .statistics__container h2 {
