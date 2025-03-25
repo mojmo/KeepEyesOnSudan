@@ -18,7 +18,7 @@ const StatisticsChart = () => {
 
     useEffect(() => {
         const fetchCSV = async () => {
-            const response: any = await fetch("src/data/refugees.csv");
+            const response: any = await fetch("/data/refugees.csv");
             const reader = response.body.getReader();
             const result = await reader.read();
             const text = new TextDecoder("utf-8").decode(result.value);
