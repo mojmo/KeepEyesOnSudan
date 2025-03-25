@@ -18,18 +18,28 @@ const StatisticsChart = () => {
 
     useEffect(() => {
         const fetchCSV = async () => {
-            const response: any = await fetch("/data/refugees.csv");
-            const reader = response.body.getReader();
-            const result = await reader.read();
-            const text = new TextDecoder("utf-8").decode(result.value);
+            try {
+                const response: any = await fetch("/data/refugees.csv");
 
-            Papa.parse(text, {
-                header: true,
-                dynamicTyping: true,
-                complete: (parsedData: any) => {
-                    setCsvData(parsedData.data);
-                },
-            });
+                if (!response.ok) throw new Error ("Failed to fetch CSV");
+
+                const reader = response.body.getReader();
+                const result = await reader.read();
+                const text = new TextDecoder("utf-8").decode(result.value);
+
+                Papa.parse(text, {
+                    header: true,
+                    dynamicTyping: true,
+                    complete: (parsedData: any) => {
+                        setCsvData(parsedData.data);
+                    },
+                    error: (error: any) => {
+                        console.error("Error parsing CSV:", error);
+                    }
+                });
+            } catch (error) {
+                console.error("Error loading CSV:", error);
+            }
         };
 
         fetchCSV();
