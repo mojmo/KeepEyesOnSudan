@@ -42,10 +42,24 @@
 }
 
 .navbar__toggle {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
     display: none;
     cursor: pointer;
 }
 
+.navbar__toggle:not(.active) .navbar__toggle-img[alt="open menu"] {
+    transform: rotate(360deg);
+}
+
+.navbar__toggle.active .navbar__toggle-img[alt="open menu"] {
+    transform: rotate(0deg);
+    opacity: 0;
+}
+
+.navbar__toggle-img {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
