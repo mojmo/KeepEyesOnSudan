@@ -3,7 +3,7 @@ import axios from "axios";
 export const getPosts = async () => {
     const API_URL = import.meta.env.VITE_API_URL;
     try {
-        const response = await axios.get(`${API_URL}/api/reddit`, {
+        const response = await axios.get(`${API_URL}/reddit`, {
             params: { q: "Sudan War" },
         });
 
