@@ -15,7 +15,7 @@ Visit the website at [keepeyesonsudan.netlify.app](https://keepeyesonsudan.netli
 - **Frontend**: React, Vite
 - **Styling**: Pure CSS
 - **APIs**: GNewsAPI, Reddit API
-- **Backend**: Node.js, Express.js (for Reddit API)
+- **Backend**: Node.js, Express.js (for routing Reddit and News APIs)
 
 ## How to Run Locally
 
@@ -33,15 +33,15 @@ Visit the website at [keepeyesonsudan.netlify.app](https://keepeyesonsudan.netli
     ```
 4. Create a `.env` file in the root directory and add your NewsAPI key and API URL:
     ```bash
-    VITE_GNEWS_API_KEY=your_gnews_api_key
     VITE_API_URL=http://localhost:5000
     ```
 5. Create a `.env` file in the api directory and add you Reddit API keys:
     ```bash
-    VITE_REDDIT_CLIENT_ID=your_reddit_client_id
-    VITE_REDDIT_CLIENT_SECRET=your_reddit_client_secret
-    VITE_REDDIT_USERNAME=your_reddit_username
-    VITE_REDDIT_PASS=your_reddit_password
+    REDDIT_CLIENT_ID=your_reddit_client_id
+    REDDIT_CLIENT_SECRET=your_reddit_client_secret
+    REDDIT_USERNAME=your_reddit_username
+    REDDIT_PASS=your_reddit_password
+    GNEWS_API_KEY=your_gnews_api_key
     ```
 6. Start the development server:
     ```bash
