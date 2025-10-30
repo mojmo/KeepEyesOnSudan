@@ -1,8 +1,8 @@
 import axios from "axios";
 import { CachedData, NewsArticle } from "@utils/types";
 
-const API_KEY = import.meta.env.VITE_GNEWS_API_KEY;
-const BASE_URL = "https://gnews.io/api/v4/search";
+const API_URL = import.meta.env.VITE_API_URL;
+
 const CACHE_KEY = "cached_news";
 const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000; // 7 days
 
@@ -16,8 +16,6 @@ export class NewsAPIError extends Error {
 export const fetchNews = async (numberOfArticles: number = 5): Promise<NewsArticle[]> => {
     const cachedData = localStorage.getItem(CACHE_KEY);
     const now = new Date().getTime();
-    const today = new Date();
-    let lastMonth = new Date(new Date().setDate(today.getDate() - 30)); 
 
     if (cachedData) {
         const { data, timestamp } = JSON.parse(cachedData);
@@ -27,14 +25,9 @@ export const fetchNews = async (numberOfArticles: number = 5): Promise<NewsArtic
         }
     }
     try {
-        const response = await axios.get(BASE_URL, {
+        const response = await axios.get(`${API_URL}/news`, {
             params: {
-                q: '"Sudan War" OR "Sudna crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"',
-                from: lastMonth.toISOString().split("T")[0],
-                sortBy: "publishedAt",
-                apikey: API_KEY,
                 max: numberOfArticles,
-                language: "en,fr,ar",
             },
         });
 
@@ -44,8 +37,8 @@ export const fetchNews = async (numberOfArticles: number = 5): Promise<NewsArtic
             const title = article.title.toLowerCase();
             const description = article.description?.toLowerCase() || "";
             return (
-                title.includes("sudan") || title.includes("SAF") ||
-                description.includes("sudan ") || description.includes("SAF")
+                title.includes("sudan") || title.includes("SAF") || title.includes("RSF") ||
+                description.includes("sudan ") || description.includes("SAF") || description.includes("RSF")
             );
         });
 

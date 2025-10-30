@@ -16,6 +16,9 @@ const USERNAME = process.env.REDDIT_USERNAME;
 const PASSWORD = process.env.REDDIT_PASS;
 const REDDIT_API_URL = "https://oauth.reddit.com";
 
+const GNEWS_API_KEY = process.env.GNEWS_API_KEY;
+const GNEWS_API_URL = "https://gnews.io/api/v4/search";
+
 const getAccessToken = async () => {
     const response = await axios.post(
         "https://www.reddit.com/api/v1/access_token",
@@ -55,7 +58,33 @@ app.get("/api/reddit", async (req, res) => {
         res.json(response.data);
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Error fetching Reddit posts");
+        res.status(500).json({ error: "Error fetching Reddit posts" });
+    }
+});
+
+// Proxy route for GNews API
+app.get("/api/news", async (req, res) => {
+    try {
+        const { max = 5 } = req.query;
+        const today = new Date();
+        const lastMonth = new Date(new Date().setDate(today.getDate() - 30));
+
+        const response = await axios.get(GNEWS_API_URL, {
+            params: {
+                q: '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"',
+                from: lastMonth.toISOString().split("T")[0],
+                sortBy: "publishedAt",
+                apikey: GNEWS_API_KEY,
+                max: max,
+                lang: "en,fr,ar",
+            }
+            
+        });
+
+        res.json(response.data);
+    } catch (error) {
+        console.error("Error fetching news:", error.message);
+        res.status(500).json({ error: "Error fetching news articles" });
     }
 });
 
