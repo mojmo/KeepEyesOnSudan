@@ -1,0 +1,59 @@
+.rtl {
+    direction: rtl;
+}
+
+.rtl .navbar {
+    direction: rtl;
+}
+
+.rtl .navbar__menu {
+    flex-direction: row-reverse;
+}
+
+.rtl .statistics__grid {
+    direction: rtl;
+}
+
+/* flip scrolling direction for RTL */
+.rtl .latest-news__container {
+    direction: rtl;
+}
+
+.rtl .latest-news__card {
+    text-align: right;
+}
+
+.rtl .latest-news__arrow.left {
+    right: 10px;
+    left: auto;
+}
+
+.rtl .latest-news__arrow.right {
+    left: 10px;
+    right: auto;
+}
+
+.rtl .social-media__posts {
+    direction: rtl;
+}
+
+.rtl .footer {
+    direction: rtl;
+}
+
+.rtl .footer__content {
+    text-align: right;
+}
+
+.rtl button {
+    direction: rtl;
+}
+
+.rtl .hero__buttons {
+    direction: rtl;
+}
+
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6, .rtl p, .rtl span, .rtl div {
+    font-family: 'Arial', 'sans-serif';
+    line-height: 1.6;
+}
