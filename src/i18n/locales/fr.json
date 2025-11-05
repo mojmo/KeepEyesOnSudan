@@ -1,0 +1,72 @@
+{
+    "navbar": {
+        "whatIsHappeningInSudan": "Que se passe-t-il au Soudan ?",
+        "statistics": "Statistiques",
+        "news": "Dernières actualités",
+        "socialMedia": "Médias sociaux"
+    },
+    "hero": {
+        "carousel1": "Les enfants paient le prix fort de la guerre : plus de 13 millions ont besoin d'une protection et d'une aide urgentes pour survivre.",
+        "carousel2": "Plus de 4,5 millions de personnes déplacées depuis le début du conflit, cherchant la sécurité à l'intérieur et au-delà des frontières du Soudan.",
+        "carousel3": "Le bilan quotidien des morts continue d'augmenter, avec des milliers de vies innocentes perdues à cause de la violence et des troubles.",
+        "title": "KeepEyesOnSudan"
+    },
+    "summary": {
+        "title": "Que se passe-t-il au Soudan ?",
+        "escapeCard": "Le Soudan connaît un conflit grave et continu qui a commencé en avril 2023. Les combats ont transformé de nombreuses zones en zones dangereuses, forçant des millions de personnes à fuir leur foyer à la recherche de sécurité.",
+        "medicalCard": "Les services de base comme les soins de santé, l'éducation et l'accès à la nourriture et à l'eau ont été perturbés. Les hôpitaux et les écoles ne fonctionnent plus dans de nombreuses régions, laissant les communautés sans soutien.",
+        "economicCard": "La crise a également causé des défis économiques significatifs. Les familles ont perdu leurs moyens de subsistance, les entreprises ont fermé et les infrastructures du pays ont été gravement endommagées, aggravant les souffrances.",
+        "peaceCard": "La situation humanitaire continue de se détériorer. Les familles luttent pour survivre entre déplacement, pénuries alimentaires et risques sanitaires croissants. Le Soudan a un besoin urgent d'assistance pour faire face à cette crise qui s'aggrave."
+    },
+    "statistics": {
+        "title": "Statistiques",
+        "refugeesTrendsOverTime": "Tendances des flux de réfugiés dans le temps",
+        "trendsDescription": "Ce graphique montre l'afflux de réfugiés de différents pays au fil du temps.",
+        "demographicBreakdown": "Répartition démographique des réfugiés soudanais",
+        "demographicBreakdownDescription": "Ce graphique présente la distribution par sexe des réfugiés soudanais dans les pays voisins.",
+        "source": "Source",
+        "statisticsSource": "Données sur les réfugiés du HCR",
+        "parseCSVError": "Nous avons rencontré une erreur lors de la récupération des données. Veuillez réessayer plus tard.",
+        "loadingError": "Échec du chargement des données statistiques. Veuillez réessayer plus tard."
+    },
+    "latestNews": {
+        "title": "Dernières actualités",
+        "checkArticle": "Voir l'article complet",
+        "noNews": "Aucun article d'actualité trouvé",
+        "fetchError": "Échec de la recherche d'actualités. Veuillez réessayer plus tard."
+    },
+    "socialMedia": {
+        "title": "Médias sociaux",
+        "reddit": "Publications Reddit",
+        "comments": "Commentaires",
+        "upvotes": "votes positifs",
+        "checkReddit": "Voir la publication sur Reddit",
+        "noUpdates": "Aucune mise à jour des médias sociaux trouvée",
+        "fetchError": "Échec de la recherche des mises à jour des médias sociaux. Veuillez réessayer plus tard."
+    },
+    "footer": {
+        "title": "KeepEyesOnSudan",
+        "description": "Suivez ces comptes pour les dernières mises à jour sur le Soudan et l'assistance urgente nécessaire.",
+        "sudanWarUpdates": "Actualités sur la guerre au Soudan",
+        "sudanWarUpdatesDescription": "Une plateforme gratuite gérée par des jeunes indépendants spécialisés dans le reportage des événements quotidiens et la synthèse de la situation au Soudan.",
+        "almigdadHassan": "Almigdad Hassan",
+        "almigdadHassanDescription": "Correspondant @AlArabiya @AlHadath Channels - Soudan.",
+        "munchkin": "Munchkin",
+        "munchkinDescription": "Créateur de contenu",
+        "khartoumAidKitchen": "Cuisine d'aide de Khartoum",
+        "khartoumAidKitchenDescription": "Initiative à but non lucratif aidant à nourrir les familles dans le besoin au Soudan",
+        "copyright": "Conçu et développé par ",
+        "mugtaba": "Mugtaba Mohamed"
+    },
+    "notFound": {
+        "title": "Page non trouvée",
+        "description": "La page que vous recherchez n'existe pas.",
+        "goHome": "Retour à l'accueil"
+    },
+    "common": {
+        "loading": "Chargement...",
+        "error": "Une erreur est survenue",
+        "retry": "Réessayer",
+        "close": "Fermer"
+    }
+}

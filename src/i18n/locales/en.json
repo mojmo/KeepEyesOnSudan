@@ -1,0 +1,72 @@
+{
+    "navbar": {
+        "whatIsHappeningInSudan": "What's happening in Sudan?",
+        "statistics": "Statistics",
+        "news": "Latest News",
+        "socialMedia": "Social Media"
+    },
+    "hero": {
+        "carousel1": "Childern bear the burnt war over 13 million require urgent protection and aid to survice.",
+        "carousel2": "Over 4.5 million people displaced since the conflict began, seeking safety within and beyond Sudan's borders.",
+        "carousel3": "Daily death tolls continue to rise, with thousands of innocent lives lost to violence and unrest.",
+        "title": "KeepEyesOnSudan"
+    },
+    "summary": {
+        "title": "What's happening in Sudan?",
+        "escapeCard": "Sudan is experiencing a severe and ongoing conflict that began in April 2023. The fighting has turned many areas into dangerous zones, forcing millions of people to flee their homes in search of safety.",
+        "medicalCard": "Basic services like healthcare, education, and access to food and water have been disrupted. Hospitals and schools are no longer functioning in many regions, leaving communities without support.",
+        "economicCard": "The crisis has also caused significant economic challenges. Families have lost their livelihoods, businesses have shut down, and the country’s infrastructure has been heavily damaged, deepening the suffering.",
+        "peaceCard": "The humanitarian situation continues to worsen. Families are struggling to survive amidst displacement, food shortages, and growing health risks. Sudan is in urgent need of assistance to address this unfolding crisis."
+    },
+    "statistics": {
+        "title": "Statistics",
+        "refugeesTrendsOverTime": "Refugees Trends Over Time",
+        "trendsDescription": "This chart shows the refugee influx from different countries over time.",
+        "demographicBreakdown": "Demographic breakdown of Sudanese Refugees",
+        "demographicBreakdownDescription": "This chart presents gender distribution among Sudanese refugees in neighboring countries.",
+        "source": "Source",
+        "statisticsSource": "UNHCR Refugees Data",
+        "parseCSVError": "We encountered an error while getting the data. Please try again later.",
+        "loadingError": "Failed to load statistics data. Please try again later."
+    },
+    "latestNews": {
+        "title": "Latest News",
+        "checkArticle": "Check out full article",
+        "noNews": "No news articles found",
+        "fetchError": "Failed to find news. Please try again later."
+    },
+    "socialMedia": {
+        "title": "Social Media",
+        "reddit": "Reddit Posts",
+        "comments": "Comments",
+        "upvotes": "upvotes",
+        "checkReddit": "Check post on Reddit",
+        "noUpdates": "No social media updates found",
+        "fetchError": "Failed to find social media updates. Please try again later."
+    },
+    "footer": {
+        "title": "KeepEyesOnSudan",
+        "description": "Follow these accounts for the latest updates on Sudan and urgent assistance needed.",
+        "sudanWarUpdates": "Sudan War Updates",
+        "sudanWarUpdatesDescription": "A free platform run by independent youth specializing in reporting on daily events and summarizing the situation in Sudan.",
+        "almigdadHassan": "Almigdad Hassan",
+        "almigdadHassanDescription": "Correspondent @AlArabiya @AlHadath Channels-Sudan.",
+        "munchkin": "Munchkin",
+        "munchkinDescription": "Content Creator",
+        "khartoumAidKitchen": "Khartoum Aid Kitchen",
+        "khartoumAidKitchenDescription": "non-profit initiative helping to feed families in need in Sudan",
+        "copyright": "Designed and developed by ",
+        "mugtaba": "Mugtaba Mohamed"
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "description": "The page you are looking for does not exist.",
+        "goHome": "Go Home"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "retry": "Retry",
+        "close": "Close"
+    }
+}
