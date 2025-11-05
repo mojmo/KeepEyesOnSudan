@@ -34,6 +34,8 @@
       "@utils/*": ["utils/*"],
       "@data/*": ["data/*"],
       "@types/*": ["types/*"],
+      "@context/*": ["context/*"],
+      "@i18n/*": ["i18n/*"],
     }
   },
   "include": ["src"]
