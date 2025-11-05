@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { getPosts } from "@utils/redditApi";
 import SkeletonCard from "@components/SkeletonCard";
 import { RedditPost } from "@utils/types";
@@ -6,6 +7,8 @@ import reddit from "assets/reddit_icon.svg";
 import "@styles/socialMedia.css";
 
 const SocialMedia = () => {
+
+    const { t } = useTranslation();
 
     const [posts, setPosts] = useState<RedditPost[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -16,13 +19,13 @@ const SocialMedia = () => {
             try {
                 const fetchedPosts = await getPosts();
                 if (fetchedPosts.length === 0) {
-                    setError("No posts found");
+                    setError(t('socialMedia.noUpdates'));
                     document.querySelector(".social-media > .blurred__shape")?.remove();
                 } else {
                     setPosts(fetchedPosts);
                 }
             } catch (error) {
-                setError("Failed to fetch posts. Please try again later.");
+                setError(t('socialMedia.fetchError'));
                 document.querySelector(".social-media > .blurred__shape")?.remove();
             } finally {
                 setIsLoading(false);
@@ -38,7 +41,7 @@ const SocialMedia = () => {
             <div className="blurred__shape blurred__shape-right"></div>
             <div className="social-media__content container" id="social-media">
                 <div className="social-media__header">
-                    <h2>Social Media</h2>
+                    <h2>{t('socialMedia.title')}</h2>
                 </div>
                 {isLoading ? (
                     <div className="social-media__skeleton">
@@ -64,8 +67,8 @@ const SocialMedia = () => {
                                 <div className="social-media__card-post">
                                     <h3>{post.title}</h3>
                                     <p>{post.subreddit}</p>
-                                    <p>{post.upvotes} upvotes, {post.comments} comments</p>
-                                    <a href={post.url} target="_blank" rel="noopener noreferrer" className="social-media__card-post-link">Check post on Reddit</a>
+                                    <p>{post.upvotes} {t('socialMedia.upvotes')}, {post.comments} {t('socialMedia.comments')}</p>
+                                    <a href={post.url} target="_blank" rel="noopener noreferrer" className="social-media__card-post-link">{t('socialMedia.checkReddit')}</a>
                                 </div>
                             </div>
                         ))}

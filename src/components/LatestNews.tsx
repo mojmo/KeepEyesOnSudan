@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { fetchNews } from "@utils/newsApi";
 import SkeletonCard from "@components/SkeletonCard";
 import article_image from "assets/KeepEyesOnSudan.png";
 import "@styles/latestNews.css";
 
 const LatestNews = () => {
+    const { t } = useTranslation();
     const [news, setNews] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -14,14 +16,14 @@ const LatestNews = () => {
             try {
                 const articles = await fetchNews(5);
                 if (articles.length === 0) {
-                    setError("No news articles found");
+                    setError(t('latestNews.noNews'));
                     document.querySelector(".latest-news > .blurred__shape")?.remove();
                 } else {
                     setNews(articles);
                 }
             } catch (error) {
                 console.error('Error loading news:', error);
-                setError("Failed to fetch news. Please try again later.");
+                setError(t('latestNews.fetchError'));
                 document.querySelector(".latest-news > .blurred__shape")?.remove();
             } finally {
                 setIsLoading(false);
@@ -50,7 +52,7 @@ const LatestNews = () => {
             <div className="blurred__shape blurred__shape-right"></div>
             <div className="latest-news__content container" id="latest-news">
                 <div className="latest-news__header">
-                    <h2>Latest News</h2>
+                    <h2>{t('latestNews.title')}</h2>
                 </div>
                 {isLoading ? (
                     <div className="latest-news__skeleton latest-news__container">
@@ -84,7 +86,7 @@ const LatestNews = () => {
                                     </div>
                                     <h3 className="latest-news__title">{article.title}</h3>
                                     <p className="latest-news__description">{article.description}</p>
-                                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="latest-news__card-link">Check out full article</a>
+                                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="latest-news__card-link">{t('latestNews.checkArticle')}</a>
                                 </div>
                             ))}
                         </div>

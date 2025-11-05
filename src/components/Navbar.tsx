@@ -3,9 +3,12 @@ import logo from '@assets/dark_logo.svg'
 import humburger from '@assets/dark_humburger.svg'
 import cross from '@assets/dark_cross.svg'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
 
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {setIsOpen(!isOpen)};
@@ -25,10 +28,11 @@ const Navbar = () => {
                 </div>
 
                 <ul className={`navbar__links ${isOpen ? 'active' : ''}`}>
-                    <li><a href="#summary" onClick={() => setIsOpen(false)}>What's happening in Sudan?</a></li>
-                    <li><a href="#statistics" onClick={() => setIsOpen(false)}>Statistics</a></li>
-                    <li><a href="#latest-news" onClick={() => setIsOpen(false)}>Latest News</a></li>
-                    <li><a href="#social-media" onClick={() => setIsOpen(false)}>Social Media</a></li>
+                    <li><a href="#summary" onClick={() => setIsOpen(false)}>{t('navbar.whatIsHappeningInSudan')}</a></li>
+                    <li><a href="#statistics" onClick={() => setIsOpen(false)}>{t('navbar.statistics')}</a></li>
+                    <li><a href="#latest-news" onClick={() => setIsOpen(false)}>{t('navbar.news')}</a></li>
+                    <li><a href="#social-media" onClick={() => setIsOpen(false)}>{t('navbar.socialMedia')}</a></li>
+                    <li><LanguageSwitcher /></li>
                 </ul>
             </div>
         </nav>

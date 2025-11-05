@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Papa from "papaparse";
 import { LineChart, CartesianGrid, Line, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import data from "@data/genders.json";
 import { ChartData } from "@utils/types";
 
 const StatisticsChart = () => {
+
+    const { t } = useTranslation();
 
     const [csvData, setCsvData] = useState<ChartData[]>([]);
     const [error, setError] = useState<string | null>(null);
@@ -40,12 +43,12 @@ const StatisticsChart = () => {
                         setCsvData(parsedData.data);
                     },
                     error: (error: any) => {
-                        setError("Error parsing CSV");
+                        setError(t('statistics.parseCSVError'));
                         console.error("Error parsing CSV:", error);
                     }
                 });
             } catch (error) {
-                setError("Error loading data");
+                setError(t('statistics.loadingError'));
                 console.error("Error loading CSV:", error);
             }
         };
@@ -57,8 +60,8 @@ const StatisticsChart = () => {
         <div className="chart-container">
             {error ? <p className="error">{error} &#128532;</p> : (
                 <div className="chart-item" style={{ width: "100%", height: window.innerWidth < 600 ? 300 : 400, marginBottom: "200px" }}>
-                    <h3>Refugee Trends Over Time</h3>
-                    <p>This chart shows the refugee influx from different countries over time.</p>
+                    <h3>{t('statistics.refugeesTrendsOverTime')}</h3>
+                    <p>{t('statistics.trendsDescription')}</p>
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={csvData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                             <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
@@ -84,8 +87,8 @@ const StatisticsChart = () => {
                 </div>
             )}
             <div className="chart-item" style={{ width: "100%", height: window.innerWidth < 600 ? 300 : 400 }}>
-                <h3>Demographic breakdown of Sudanese Refugees</h3>
-                <p>The chart presents gender distribution among Sudanese refugees in neighboring countries.</p>
+                <h3>{t('statistics.demographicBreakdown')}</h3>
+                <p>{t('statistics.demographicBreakdownDescription')}</p>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={formattedData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />

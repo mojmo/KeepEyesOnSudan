@@ -1,20 +1,22 @@
 import { useState , useEffect} from 'react'
+import { useTranslation } from 'react-i18next'
 import carousel_1 from '@assets/war_child.jpg' // image source: https://www.rescue.org/article/war-sudan-over-8-million-people-displaced
 import carousel_2 from '@assets/displacement.jpg' // image source: https://news.un.org/en/story/2023/11/1143317
 import carousel_3 from '@assets/destruction.jpg' // image source: https://arabcenterdc.org/resource/war-and-displacement-in-sudan/
 import '@styles/carousel.css'
 
-const images = [carousel_1, carousel_2, carousel_3,];
-
-const imageTexts = [
-    'Children bear the brunt of the war—over 13 million require urgent protection and aid to survive.',
-    'Over 4.5 million people displaced since the conflict began, seeking safety within and beyond Sudan\'s borders.',
-    'Daily death tolls continue to rise, with thousands of innocent lives lost to violence and unrest.',
-];
-
 const Carousel = () => {
 
+    const { t } = useTranslation();
     const [currentSlide, setCurrentSlide] = useState(0);
+
+    const images = [carousel_1, carousel_2, carousel_3,];
+
+    const imageTexts = [
+        t('hero.carousel1'),
+        t('hero.carousel2'),
+        t('hero.carousel3'),
+    ];
 
     const handleIndicatorClick = (index: number) => {
         setCurrentSlide(index);
