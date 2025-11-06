@@ -54,6 +54,6 @@
 }
 
 .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6, .rtl p, .rtl span, .rtl div {
-    font-family: 'Arial', 'sans-serif';
+    font-family: 'Cairo', 'Arial', 'sans-serif';
     line-height: 1.6;
 }

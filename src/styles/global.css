@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap'); /* arabic font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Lateef:wght@200;300;400;500;600;700;800&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap'); /* arabic font */
 @import './rtl.css';
 
 * {
@@ -21,7 +21,7 @@
   --black: #1E1E1E;
   --accent-color: #C1121F;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Merriweather', serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -36,11 +36,11 @@
 
 /* language-specific font families */
 :lang(ar) {
-  font-family: 'Amiri', 'Arial', sans-serif;
+  font-family: 'Cairo', 'Arial', sans-serif;
 }
 
 :lang(en), :lang(fr) {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Merriweather', serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
