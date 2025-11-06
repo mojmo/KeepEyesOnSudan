@@ -34,22 +34,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         // add RTL class to body for css styling
         if (isRTL) {
             document.body.classList.add('rtl');
-            const summaryCard = document.querySelectorAll<HTMLElement>('.summary__card');
-            summaryCard.forEach(card => {
-                card.style.setProperty('--blue-gradient', 'linear-gradient(to left, var(--primary-color), var(--secondary-color))');
-            });
-            document.querySelector<HTMLElement>('.footer__container')?.style.setProperty(
-                '--blue-gradient', 'linear-gradient(to left, var(--primary-color), var(--secondary-color))'
-            );
         } else {
             document.body.classList.remove('rtl');
-            const summaryCard = document.querySelectorAll<HTMLElement>('.summary__card');
-            summaryCard.forEach(card => {
-                card.style.setProperty('--blue-gradient', 'linear-gradient(to right, var(--primary-color), var(--secondary-color))');
-            });
-            document.querySelector<HTMLElement>('.footer__container')?.style.setProperty(
-                '--blue-gradient', 'linear-gradient(to right, var(--primary-color), var(--secondary-color))'
-            );
         }
 
         // update HTML meta tags

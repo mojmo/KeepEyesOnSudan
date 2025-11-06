@@ -7,7 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  transition: margin 0.3s ease, padding 0.3s ease; /* smooth transition for margin and padding changes */
+  transition: margin 0.3s ease, padding 0.3s ease;
 }
 
 :root {
@@ -21,6 +21,7 @@
   --black: #1E1E1E;
   --accent-color: #C1121F;
 
+  /* Default LTR gradient */
   --blue-gradient: linear-gradient(to right, var(--primary-color), var(--secondary-color));
 
   font-family: 'Merriweather', serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -36,7 +37,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* language-specific font families */
+/* RTL gradient override */
+.rtl {
+  --blue-gradient: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+}
+
+/* Language-specific font families */
 :lang(ar) {
   font-family: 'Cairo', 'Arial', sans-serif;
 }
