@@ -83,6 +83,18 @@
     visibility: visible;
 }
 
+/* RTL tooltip styles */
+.rtl .tooltip .tooltiptext {
+    left: auto;
+    right: 30%;
+}
+
+.rtl .tooltip .tooltiptext::after {
+    right: auto;
+    left: 100%;
+    border-color: transparent transparent transparent var(--primary-color);
+}
+
 @media screen and (max-width: 768px) {
     .footer__logo h2 {
         font-size: 1.2rem;
@@ -107,5 +119,10 @@
     .footer__icons img {
         width: 80%;
         height: 80%;
+    }
+
+    /* RTL mobile adjustments */
+    .rtl .tooltip .tooltiptext {
+        right: 10%;
     }
 }
