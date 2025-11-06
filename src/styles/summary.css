@@ -21,7 +21,7 @@
     width: calc(50% - 1rem);
     padding: 2rem;
     border-radius: 20px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background: var(--blue-gradient);
     box-shadow: 0 4px 8px rgba(0, 48, 73, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;

@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem 0;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background: var(--blue-gradient);
     border-radius: 20px;
     padding: 2rem;
 }

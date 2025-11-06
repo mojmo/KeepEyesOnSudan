@@ -21,6 +21,8 @@
   --black: #1E1E1E;
   --accent-color: #C1121F;
 
+  --blue-gradient: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+
   font-family: 'Merriweather', serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
