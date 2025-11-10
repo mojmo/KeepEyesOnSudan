@@ -57,6 +57,10 @@
     opacity: 0;
 }
 
+.rtl .navbar__toggle:not(.active) .navbar__toggle-img[alt="open menu"] {
+    transform: rotate(180deg);
+}
+
 .navbar__toggle-img {
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
