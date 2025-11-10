@@ -26,8 +26,8 @@ const Footer = () => {
                             <span className="tooltiptext">{t('footer.almigdadHassanDescription')}</span>
                         </a>
                         <a className="tooltip" href="https://x.com/BSonblast" target="_blank">
-                            {t('footer.munchkin')}
-                            <span className="tooltiptext">{t('footer.munchkinDescription')}</span>
+                            {t('footer.saraElhassan')}
+                            <span className="tooltiptext">{t('footer.saraElhassanDescription')}</span>
                         </a>
                         <a className="tooltip" href="https://x.com/KhartoumKitchen" target="_blank">
                             {t('footer.khartoumAidKitchen')}
