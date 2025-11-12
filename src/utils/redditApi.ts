@@ -9,7 +9,7 @@ export const getPosts = async () => {
 
         const posts = response.data.data.children.map((post: any) => ({
             title: post.data.title,
-            url: post.data.url,
+            url: "https://reddit.com" + post.data.permalink,
             subreddit: post.data.subreddit_name_prefixed,
             upvotes: post.data.ups,
             comments: post.data.num_comments,
