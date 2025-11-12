@@ -4,7 +4,7 @@ export const getPosts = async () => {
     const API_URL = import.meta.env.VITE_API_URL;
     try {
         const response = await axios.get(`${API_URL}/reddit`, {
-            params: { q: "Sudan War" },
+            params: { q: '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"' },
         });
 
         const posts = response.data.data.children.map((post: any) => ({
