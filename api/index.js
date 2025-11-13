@@ -19,6 +19,12 @@ const REDDIT_API_URL = "https://oauth.reddit.com";
 const GNEWS_API_KEY = process.env.GNEWS_API_KEY;
 const GNEWS_API_URL = "https://gnews.io/api/v4/search";
 
+const searchQueries = {
+    en: '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"',
+    ar: '"السودان" OR "حرب السودان" OR "أزمة السودان" OR "قوات الدعم السريع" OR "الجيش السوداني" OR "القوات المسلحة السودانية"',
+    fr: '"Guerre du Soudan" OR "Crise du Soudan" OR "Conflit soudanais" OR "SAF" OR "RSF" NOT "Soudan du Sud"',
+}
+
 const getAccessToken = async () => {
     const response = await axios.post(
         "https://www.reddit.com/api/v1/access_token",
@@ -65,9 +71,11 @@ app.get("/api/reddit", async (req, res) => {
 // Proxy route for GNews API
 app.get("/api/news", async (req, res) => {
     try {
-        const { lang = 'en', max = 5, searchQuery = '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"' } = req.query;
+        const { lang = 'en', max = 5 } = req.query;
         const today = new Date();
         const lastMonth = new Date(new Date().setDate(today.getDate() - 30));
+
+        const searchQuery = searchQueries[lang];
 
         const response = await axios.get(GNEWS_API_URL, {
             params: {

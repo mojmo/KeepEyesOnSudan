@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "@context/LanguageContext";
 import { fetchNews } from "@utils/newsApi";
 import SkeletonCard from "@components/SkeletonCard";
 import article_image from "assets/KeepEyesOnSudan.png";
@@ -7,6 +8,7 @@ import "@styles/latestNews.css";
 
 const LatestNews = () => {
     const { t } = useTranslation();
+    const { currentLanguage } = useLanguage();
     const [news, setNews] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -14,7 +16,7 @@ const LatestNews = () => {
     useEffect(() => {
         const loadNews = async () => {
             try {
-                const articles = await fetchNews(5, t('common.lang'), t('common.searchQuery'));
+                const articles = await fetchNews(5, currentLanguage);
                 if (articles.length === 0) {
                     setError(t('latestNews.noNews'));
                     document.querySelector(".latest-news > .blurred__shape")?.remove();
@@ -30,7 +32,7 @@ const LatestNews = () => {
             }
         };
         loadNews();
-    }, []);
+    }, [currentLanguage, t]);
 
     const scrollLeft = () => {
         const container = document.querySelector(".latest-news__container");

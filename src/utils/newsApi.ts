@@ -3,7 +3,6 @@ import { CachedData, NewsArticle } from "@utils/types";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const CACHE_KEY = "cached_news";
 const CACHE_EXPIRY = 60 * 60 * 24 * 7 * 1000; // 7 days
 
 export class NewsAPIError extends Error {
@@ -13,7 +12,9 @@ export class NewsAPIError extends Error {
     }
 }
 
-export const fetchNews = async (numberOfArticles: number = 5, lang: string, searchQuery: string) => {
+export const fetchNews = async (numberOfArticles: number = 5, lang: string) => {
+    // create language specific cache key
+    const CACHE_KEY = `cached_news_${lang}`;
     const cachedData = localStorage.getItem(CACHE_KEY);
     const now = new Date().getTime();
 
@@ -29,7 +30,6 @@ export const fetchNews = async (numberOfArticles: number = 5, lang: string, sear
             params: {
                 lang: lang,
                 max: numberOfArticles,
-                searchQuery: searchQuery,
             },
         });
 
@@ -37,8 +37,12 @@ export const fetchNews = async (numberOfArticles: number = 5, lang: string, sear
 
         const filteredArticles: NewsArticle[] = articles.filter((article: NewsArticle) => {
             return (
-                article.publishedAt && article.title && article.url &&
-                article.description && article.source?.name && article.image
+                article.publishedAt &&
+                article.title &&
+                article.url &&
+                article.description &&
+                article.source?.name &&
+                article.image
             );
         });
 
