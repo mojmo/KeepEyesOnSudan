@@ -67,6 +67,8 @@
         "loading": "Chargement...",
         "error": "Une erreur est survenue",
         "retry": "Réessayer",
-        "close": "Fermer"
+        "close": "Fermer",
+        "lang": "fr",
+        "searchQuery": "\"Guerre du Soudan\" OR \"Crise au Soudan\" OR \"Conflit au Soudan\" OR \"SAF\" OR \"RSF\" AND NOT \"Soudan du Sud\""
     }
 }
