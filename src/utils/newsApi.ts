@@ -13,7 +13,7 @@ export class NewsAPIError extends Error {
     }
 }
 
-export const fetchNews = async (numberOfArticles: number = 5): Promise<NewsArticle[]> => {
+export const fetchNews = async (numberOfArticles: number = 5, lang: string, searchQuery: string) => {
     const cachedData = localStorage.getItem(CACHE_KEY);
     const now = new Date().getTime();
 
@@ -27,18 +27,18 @@ export const fetchNews = async (numberOfArticles: number = 5): Promise<NewsArtic
     try {
         const response = await axios.get(`${API_URL}/news`, {
             params: {
+                lang: lang,
                 max: numberOfArticles,
+                searchQuery: searchQuery,
             },
         });
 
         const articles = response.data.articles;
 
         const filteredArticles: NewsArticle[] = articles.filter((article: NewsArticle) => {
-            const title = article.title.toLowerCase();
-            const description = article.description?.toLowerCase() || "";
             return (
-                title.includes("sudan") || title.includes("SAF") || title.includes("RSF") ||
-                description.includes("sudan ") || description.includes("SAF") || description.includes("RSF")
+                article.publishedAt && article.title && article.url &&
+                article.description && article.source?.name && article.image
             );
         });
 

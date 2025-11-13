@@ -14,7 +14,7 @@ const LatestNews = () => {
     useEffect(() => {
         const loadNews = async () => {
             try {
-                const articles = await fetchNews(5);
+                const articles = await fetchNews(5, t('common.lang'), t('common.searchQuery'));
                 if (articles.length === 0) {
                     setError(t('latestNews.noNews'));
                     document.querySelector(".latest-news > .blurred__shape")?.remove();

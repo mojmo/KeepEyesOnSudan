@@ -65,18 +65,18 @@ app.get("/api/reddit", async (req, res) => {
 // Proxy route for GNews API
 app.get("/api/news", async (req, res) => {
     try {
-        const { max = 5 } = req.query;
+        const { lang = 'en', max = 5, searchQuery = '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"' } = req.query;
         const today = new Date();
         const lastMonth = new Date(new Date().setDate(today.getDate() - 30));
 
         const response = await axios.get(GNEWS_API_URL, {
             params: {
-                q: '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"',
+                q: searchQuery,
                 from: lastMonth.toISOString().split("T")[0],
                 sortBy: "publishedAt",
                 apikey: GNEWS_API_KEY,
                 max: max,
-                lang: "en,fr,ar",
+                lang: lang,
             }
             
         });
