@@ -15,6 +15,9 @@ const LatestNews = () => {
 
     useEffect(() => {
         const loadNews = async () => {
+            setIsLoading(true);
+            setError(null);
+            
             try {
                 const articles = await fetchNews(5, currentLanguage);
                 if (articles.length === 0) {
@@ -31,8 +34,9 @@ const LatestNews = () => {
                 setIsLoading(false);
             }
         };
+        
         loadNews();
-    }, [currentLanguage, t]);
+    }, [currentLanguage, t]); // Re-run when language changes
 
     const scrollLeft = () => {
         const container = document.querySelector(".latest-news__container");
@@ -68,7 +72,7 @@ const LatestNews = () => {
                             />
                         ))}
                     </div>
-                ) : error ?(
+                ) : error ? (
                     <div className="latest-news__container">
                         <p className="error">{error} &#128532;</p>
                     </div>
@@ -88,7 +92,9 @@ const LatestNews = () => {
                                     </div>
                                     <h3 className="latest-news__title">{article.title}</h3>
                                     <p className="latest-news__description">{article.description}</p>
-                                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="latest-news__card-link">{t('latestNews.checkArticle')}</a>
+                                    <a href={article.url} target="_blank" rel="noopener noreferrer" className="latest-news__card-link">
+                                        {t('latestNews.checkArticle')}
+                                    </a>
                                 </div>
                             ))}
                         </div>
