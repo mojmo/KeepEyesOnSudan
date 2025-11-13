@@ -67,8 +67,6 @@
         "loading": "Loading...",
         "error": "An error occurred",
         "retry": "Retry",
-        "close": "Close",
-        "lang": "en",
-        "searchQuery": "\"Sudan War\" OR \"Sudan crisis\" OR \"Sudan conflict\" OR \"SAF\" OR \"RSF\" AND NOT \"South Sudan\""
+        "close": "Close"
     }
 }
