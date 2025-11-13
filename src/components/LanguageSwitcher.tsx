@@ -12,7 +12,7 @@ const LanguageSwitcher: React.FC = () => {
     };
 
     return (
-        <div className='language-swithcer'>
+        <div className='language-switcher'>
             <select
                 value={currentLanguage}
                 onChange={(e) => changeLanguage(e.target.value)}
