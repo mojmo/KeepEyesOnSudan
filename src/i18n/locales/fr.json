@@ -47,6 +47,8 @@
     "footer": {
         "title": "KeepEyesOnSudan",
         "description": "Suivez ces comptes pour les dernières mises à jour sur le Soudan et l'assistance urgente nécessaire.",
+        "updates": "Suivre les dernières mises à jour",
+        "donnations": "Soutenir les initiatives d'aide humanitaire",
         "sudanWarUpdates": "Actualités sur la guerre au Soudan",
         "sudanWarUpdatesDescription": "Une plateforme gratuite gérée par des jeunes indépendants spécialisés dans le reportage des événements quotidiens et la synthèse de la situation au Soudan.",
         "almigdadHassan": "Almigdad Hassan",
@@ -55,6 +57,14 @@
         "saraElhassanDescription": "Une créatrice de contenu qui s'attache à sensibiliser le public à la crise humanitaire et à l'actualité au Soudan, ainsi qu'à fournir une aide en cas de besoins urgents.",
         "khartoumAidKitchen": "Cuisine d'aide de Khartoum",
         "khartoumAidKitchenDescription": "Initiative à but non lucratif aidant à nourrir les familles dans le besoin au Soudan",
+        "vistaMaps": "Vista Maps",
+        "vistaMapsDescription": "Le centre VISTA fournit des analyses et des cartes basées sur le renseignement de source ouverte (OSINT) pour aider à fournir des informations claires sur le contrôle et la situation sur le terrain au Soudan de manière précise et fiable.",
+        "basmatWasl": "Basmat Wasl",
+        "basmatWaslDescription": "Une organisation caritative à but non lucratif qui vise à fournir une aide et un soutien aux nécessiteux, aux familles pauvres et aux personnes déplacées dans la société soudanaise.",
+        "SAPA": "SAPA - Association des médecins soudano-américains",
+        "SAPADescription": "Une organisation scientifique, professionnelle et humanitaire. Fournissant des soins de santé salvateurs, des médicaments essentiels et des approvisionnements alimentaires vitaux aux familles qui ont tout perdu.",
+        "sadagaat": "Sadagaat",
+        "sadagaatDescription": "Une organisation à but non lucratif reliant les Américains aux personnes dans le besoin au Soudan. Elle s'engage à avoir un impact durable sur la pauvreté et l'injustice sociale au Soudan.",
         "copyright": "Conçu et développé par ",
         "mugtaba": "Mugtaba Mohamed"
     },
