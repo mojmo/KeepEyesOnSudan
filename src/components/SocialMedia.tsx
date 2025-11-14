@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "@context/LanguageContext";
 import { getPosts } from "@utils/redditApi";
 import SkeletonCard from "@components/SkeletonCard";
 import { RedditPost } from "@utils/types";
@@ -9,6 +10,7 @@ import "@styles/socialMedia.css";
 const SocialMedia = () => {
 
     const { t } = useTranslation();
+    const { currentLanguage } = useLanguage();
 
     const [posts, setPosts] = useState<RedditPost[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -16,8 +18,11 @@ const SocialMedia = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            setIsLoading(true);
+            setError(null);
+
             try {
-                const fetchedPosts = await getPosts();
+                const fetchedPosts = await getPosts(currentLanguage, 8);
                 if (fetchedPosts.length === 0) {
                     setError(t('socialMedia.noUpdates'));
                     document.querySelector(".social-media > .blurred__shape")?.remove();
@@ -33,7 +38,7 @@ const SocialMedia = () => {
         };
 
         fetchPosts();
-    }, []);
+    }, [currentLanguage, t]);
 
     return (
         <section className="social-media">

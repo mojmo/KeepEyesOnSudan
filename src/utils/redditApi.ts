@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const getPosts = async () => {
+export const getPosts = async (lang: string, limit: number) => {
     const API_URL = import.meta.env.VITE_API_URL;
     try {
         const response = await axios.get(`${API_URL}/reddit`, {
-            params: { q: '"Sudan War" OR "Sudan crisis" OR "Sudan conflict" OR "SAF" OR "RSF" AND NOT "South Sudan"' },
+            params: {lang, limit},
         });
 
         const posts = response.data.data.children.map((post: any) => ({
@@ -13,8 +13,7 @@ export const getPosts = async () => {
             subreddit: post.data.subreddit_name_prefixed,
             upvotes: post.data.ups,
             comments: post.data.num_comments,
-        }))
-        .filter((post: any) => post.title.includes("Sudan"));
+        }));
 
         return posts;
     } catch (error) {

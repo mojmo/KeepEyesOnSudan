@@ -51,16 +51,17 @@ app.get("/api/hello", (req, res) => {
 app.get("/api/reddit", async (req, res) => {
     try {
         const token = await getAccessToken();
-        const { q } = req.query;
+        const { lang = 'en', limit = 8 } = req.query;
+
+        const searchQuery = searchQueries[lang];
 
         const response = await axios.get(`${REDDIT_API_URL}/search`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 "User-Agent": "KeepEyesOnSudan",
             },
-            params: { q, sort: "relevance", limit: 8 },
+            params: { q: searchQuery, sort: "relevance", limit: limit },
         });
-
         res.json(response.data);
     } catch (error) {
         console.error(error.message);
