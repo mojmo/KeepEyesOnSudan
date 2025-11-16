@@ -24,7 +24,10 @@
         "trendsDescription": "Ce graphique montre l'afflux de réfugiés de différents pays au fil du temps.",
         "demographicBreakdown": "Répartition démographique des réfugiés soudanais",
         "demographicBreakdownDescription": "Ce graphique présente la distribution par sexe des réfugiés soudanais dans les pays voisins.",
-        "source": "Source",
+        "trendsLastUpdated": "Dernière mise à jour : 9 novembre 2025",
+        "ageSexBreakdownNote": "*La ventilation par âge et sexe n'est disponible que pour les personnes enregistrées auprès du HCR.",
+        "demographicSource": "Source : HCR, OIM et gouvernements (données de décembre 2024)",
+        "source": "Source des statistiques",
         "statisticsSource": "Données sur les réfugiés du HCR",
         "parseCSVError": "Nous avons rencontré une erreur lors de la récupération des données. Veuillez réessayer plus tard.",
         "loadingError": "Échec du chargement des données statistiques. Veuillez réessayer plus tard."

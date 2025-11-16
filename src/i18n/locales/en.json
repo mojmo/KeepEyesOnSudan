@@ -24,7 +24,10 @@
         "trendsDescription": "This chart shows the refugee influx from different countries over time.",
         "demographicBreakdown": "Demographic breakdown of Sudanese Refugees",
         "demographicBreakdownDescription": "This chart presents gender distribution among Sudanese refugees in neighboring countries.",
-        "source": "Source",
+        "trendsLastUpdated": "last updated: 09 Nov 2025",
+        "ageSexBreakdownNote": "*age/sex breakdown only available for those registered by UNHCR.",
+        "demographicSource": "Source: UNHCR, IOM & Governments (as of Dec 2024)",
+        "source": "Source of Statistics ",
         "statisticsSource": "UNHCR Refugees Data",
         "parseCSVError": "We encountered an error while getting the data. Please try again later.",
         "loadingError": "Failed to load statistics data. Please try again later."
