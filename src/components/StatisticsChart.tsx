@@ -59,7 +59,7 @@ const StatisticsChart = () => {
     return (
         <div className="chart-container">
             {error ? <p className="error">{error} &#128532;</p> : (
-                <div className="chart-item" style={{ width: "100%", height: window.innerWidth < 600 ? 300 : 400, marginBottom: "200px" }}>
+                <div className="chart-item">
                     <h3>{t('statistics.refugeesTrendsOverTime')}</h3>
                     <p>{t('statistics.trendsDescription')}</p>
                     <ResponsiveContainer width="100%" height="100%">
@@ -84,9 +84,10 @@ const StatisticsChart = () => {
                             <Line type="linear" dataKey="TOTAL" stroke="#C1121F" dot={false} />
                         </LineChart>
                     </ResponsiveContainer>
+                    <p className="statistics-note">{t('statistics.trendsLastUpdated')}</p>
                 </div>
             )}
-            <div className="chart-item" style={{ width: "100%", height: window.innerWidth < 600 ? 300 : 400 }}>
+            <div className="chart-item">
                 <h3>{t('statistics.demographicBreakdown')}</h3>
                 <p>{t('statistics.demographicBreakdownDescription')}</p>
                 <ResponsiveContainer width="100%" height="100%">
@@ -102,6 +103,10 @@ const StatisticsChart = () => {
                         <Bar dataKey="Men" stackId="a" fill="#003049" />
                     </BarChart>
                 </ResponsiveContainer>
+            </div>
+            <div>
+                <p className="statistics-note">{t('statistics.ageSexBreakdownNote')}</p>
+                <p className="statistics-note">{t('statistics.demographicSource')}</p>
             </div>
         </div>
     );
