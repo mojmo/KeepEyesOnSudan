@@ -6,16 +6,18 @@ Visit the website at [keepeyesonsudan.netlify.app](https://keepeyesonsudan.netli
 
 ## Features
 
-- **Latest News**: Fetches and displays the latest news about Sudan using the NewsAPI.
+- **Latest News**: Fetches and displays the latest news about Sudan using the GNews API.
 - **Social Media Posts**: Integrates Reddit API to show real-time social media updates.
 - **Statistics**: Visualizes data about the Sudan war using charts from `data.unhcr.org`.
 - **Responsive Design**: Fully responsive layout with a mobile-friendly design.
+- **Multi-Language Support**: Supports multiple languages, including Arabic, English, and French.
+- **Donation Links**: Provides links to donate to humanitarian organizations and charities.
 
 ## Tech Stack
 - **Frontend**: React, Vite
 - **Styling**: Pure CSS
 - **APIs**: GNewsAPI, Reddit API
-- **Backend**: Node.js, Express.js (for routing Reddit and News APIs)
+- **Backend**: Node.js, Express.js (for routing Reddit and GNews APIs)
 
 ## How to Run Locally
 
@@ -31,11 +33,11 @@ Visit the website at [keepeyesonsudan.netlify.app](https://keepeyesonsudan.netli
     ```bash
     npm install
     ```
-4. Create a `.env` file in the root directory and add your NewsAPI key and API URL:
+4. Create a `.env` file in the root directory and add the API URL:
     ```bash
     VITE_API_URL=http://localhost:5000
     ```
-5. Create a `.env` file in the api directory and add you Reddit API keys:
+5. Create a `.env` file in the api directory and add you Reddit API keys and GNews API key:
     ```bash
     REDDIT_CLIENT_ID=your_reddit_client_id
     REDDIT_CLIENT_SECRET=your_reddit_client_secret
